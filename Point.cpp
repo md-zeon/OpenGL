@@ -32,6 +32,34 @@ int main (int argc, char** argv) {
     glutDisplayFunc(display);
     // Enters the GLUT event processing loop. This function will not return until the program is terminated. It continuously checks for events (such as keyboard input, mouse input, or window events) and calls the appropriate callback functions (like the display function) to handle those events. This is necessary for the program to respond to user interactions and to keep the window responsive. In this case, it will ensure that the display function is called to render the point on the screen whenever necessary.
     glutMainLoop();
-    
+
     return 0;
 }
+
+/*
+Coordinate System:
+Default openGl Coordinates:
+
+(-1, 1)    (0, 1)    (1, 1)
+              !
+              !
+              !
+(-1, 0)----(0, 0)----(1, 0)
+              !
+              !
+              !
+(-1,-1)    (0,-1)    (1,-1)
+
+
+- (0, 0): The origin of the coordinate system, located at the center of the window. This is where the point is drawn in the display function.
+- (1, 1): The top-right corner of the coordinate system.
+- (-1, 1): The top-left corner of the coordinate system.
+- (1, -1): The bottom-right corner of the coordinate system.
+- (-1, -1): The bottom-left corner of the coordinate system.
+- (0, 1): The midpoint of the top edge of the coordinate system.
+- (0, -1): The midpoint of the bottom edge of the coordinate system.
+- (-1, 0): The midpoint of the left edge of the coordinate system.
+- (1, 0): The midpoint of the right edge of the coordinate system.
+- The coordinate system is a Cartesian coordinate system where the x-axis runs horizontally and the y-axis runs vertically. The coordinates are normalized, meaning that they range from -1 to 1 in both directions, regardless of the actual size of the window. This allows for consistent rendering across different window sizes and resolutions.
+
+*/
