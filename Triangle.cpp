@@ -5,11 +5,14 @@ void display()
     // Clear the color buffer to prepare for drawing
     glClear(GL_COLOR_BUFFER_BIT);
     glBegin(GL_TRIANGLES);
-        // Define the vertices of the triangle
+        // Set the color to red and specify the first vertex of the triangle
+        glColor3f(1, 0, 0);
         glVertex2f(0,0.5);
-
+        // Set the color to green and specify the second vertex of the triangle
+        glColor3f(0, 1, 0);
         glVertex2f(-0.5,-0.5);
-
+        // Set the color to blue and specify the third vertex of the triangle
+        glColor3f(0, 0, 1);
         glVertex2f(0.5,-0.5);
 
     glEnd();
